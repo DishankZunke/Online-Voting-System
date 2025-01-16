@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <style>
+        body {
+            background-image: url('/static/voteing%20project.jpg'); /* Path to the background image */
+            background-size: cover; /* Ensure the image covers the entire page */
+            background-repeat: no-repeat; /* Prevent image tiling */
+            background-attachment: fixed; /* Keep the background fixed while scrolling */
+            font-family: Arial, sans-serif; /* Set a clean font */
+            color: white; /* Set text color to white */
+            text-align: center; /* Center-align text and content */
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            margin-top: 50px; /* Add space at the top */
+        }
+
+        form {
+            display: inline-block; /* Center the form */
+            background-color: rgba(0, 0, 0, 0.5); /* Add a translucent background */
+            padding: 20px; /* Add padding inside the form */
+            border-radius: 10px; /* Round the corners of the form */
+            margin-top: 20px; /* Add some space above the form */
+        }
+
+        label, input, button {
+            display: block; /* Make each element take up a full line */
+            margin: 10px 0; /* Add spacing between elements */
+        }
+
+        input, button {
+            width: 100%; /* Make inputs and button full width within the form */
+            padding: 10px; /* Add padding for better usability */
+            border-radius: 5px; /* Round the corners */
+            border: none; /* Remove default borders */
+        }
+
+        button {
+            background-color: #4CAF50; /* Green background color */
+            color: white; /* White text color */
+            font-weight: bold; /* Bold text */
+            cursor: pointer; /* Pointer cursor on hover */
+        }
+
+        button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Register</h1>
+    <form method="POST">
+        <label for="user_id">User ID:</label>
+        <input type="text" id="user_id" name="user_id" required>
+        
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+        
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>
+

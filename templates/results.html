@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results</title>
+    <style>
+        body {
+            background-image: url('/static/voteing%20project.jpg'); /* Path to the background image */
+            background-size: cover; /* Ensure the image covers the whole page */
+            background-repeat: no-repeat; /* Prevent image tiling */
+            background-attachment: fixed; /* Keep the background fixed during scrolling */
+            font-family: Arial, sans-serif; /* Use a clean font */
+            color: white; /* White text for contrast */
+            text-align: center; /* Center-align text and content */
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2 {
+            margin-top: 20px; /* Add some space above headings */
+        }
+
+        ul {
+            list-style-type: none; /* Remove default bullet points */
+            padding: 0; /* Remove default padding */
+            margin: 20px auto; /* Center-align the list with spacing */
+            max-width: 600px; /* Limit the width of the list for better readability */
+            text-align: left; /* Align text to the left within the list */
+        }
+
+        li {
+            background-color: rgba(0, 0, 0, 0.5); /* Add a translucent background to list items */
+            margin: 10px 0; /* Add spacing between list items */
+            padding: 10px; /* Add padding inside list items */
+            border-radius: 5px; /* Round the corners */
+        }
+
+        p {
+            font-size: 18px; /* Make paragraph text slightly larger */
+            margin: 20px auto; /* Center-align the paragraph with spacing */
+            max-width: 600px; /* Limit paragraph width for readability */
+        }
+
+        .winner {
+            font-weight: bold; /* Highlight the winner text */
+            color: #FFD700; /* Gold color for emphasis */
+        }
+    </style>
+</head>
+<body>
+    <h1>Voting Results</h1>
+    <ul>
+        {% for candidate, details in candidates.items() %}
+            <li>{{ candidate }} ({{ details['politician'] }}): {{ details['votes'] }} votes</li>
+        {% endfor %}
+    </ul>
+
+    {% if winners|length > 1 %}
+        <h2>It's a tie between:</h2>
+        <ul>
+            {% for winner in winners %}
+                <li>{{ winner }} ({{ candidates[winner]['politician'] }})</li>
+            {% endfor %}
+        </ul>
+        <p>Each with {{ max_votes }} votes.</p>
+    {% else %}
+        <h2>The winner is <span class="winner">{{ winners[0] }}</span> ({{ candidates[winners[0]]['politician'] }}) with {{ max_votes }} votes!</h2>
+    {% endif %}
+</body>
+</html>
+

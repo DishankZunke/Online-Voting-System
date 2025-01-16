@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <style>
+        body {
+            background-image: url('/static/voteing%20project.jpg'); /* Path to the background image */
+            background-size: cover; /* Ensure the image covers the whole page */
+            background-repeat: no-repeat; /* Prevent image tiling */
+            background-attachment: fixed; /* Keep the background fixed during scrolling */
+            font-family: Arial, sans-serif; /* Use a clean font */
+            color: white; /* White text for contrast */
+            text-align: center; /* Center-align text and content */
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            margin-top: 50px; /* Add some space at the top */
+        }
+
+        p {
+            font-size: 18px; /* Increase text size for better readability */
+            margin: 10px 0; /* Add some spacing between paragraphs */
+        }
+
+        a {
+            font-size: 18px; /* Increase link size */
+            font-weight: bold; /* Make links bold */
+            color: white; /* White text for contrast */
+            text-decoration: none; /* Remove underline */
+            margin: 0 10px; /* Add spacing between links */
+            padding: 10px 20px; /* Add padding for clickable area */
+            background-color: rgba(0, 0, 0, 0.5); /* Add a translucent background */
+            border-radius: 5px; /* Round the corners */
+            display: inline-block; /* Ensure links stay inline */
+        }
+
+        a:hover {
+            background-color: rgba(255, 255, 255, 0.3); /* Change background on hover */
+            color: black; /* Change text color on hover */
+        }
+
+        .links {
+            margin-top: 20px; /* Add space above the links */
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome {{ user['username'] }}</h1>
+    <p>Age: {{ user['age'] }}</p>
+    <p>Voted: {{ 'Yes' if user['has_voted'] else 'No' }}</p>
+    <div class="links">
+        <a href="/vote">Vote</a>
+        <a href="/results">View Results</a>
+        <a href="/logout">Log Out</a>
+    </div>
+</body>
+</html>
+

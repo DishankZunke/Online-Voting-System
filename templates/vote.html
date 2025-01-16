@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vote</title>
+    <style>
+        body {
+            background-image: url('/static/voteing%20project.jpg'); /* Path to the background image */
+            background-size: cover; /* Ensure the image covers the whole page */
+            background-repeat: no-repeat; /* Prevent image tiling */
+            background-attachment: fixed; /* Keep the background fixed during scrolling */
+            font-family: Arial, sans-serif; /* Use a clean font */
+            color: white; /* White text color for contrast */
+            text-align: center; /* Center-align text and content */
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            margin-top: 50px; /* Add some space at the top */
+        }
+
+        form {
+            display: inline-block; /* Center the form on the page */
+            background-color: rgba(0, 0, 0, 0.5); /* Add a translucent background */
+            padding: 20px; /* Add padding inside the form */
+            border-radius: 10px; /* Round the corners of the form */
+            margin-top: 20px; /* Add space above the form */
+        }
+
+        input[type="radio"] {
+            margin: 10px 0; /* Add some spacing between radio buttons */
+        }
+
+        label {
+            display: inline-block; /* Align labels with their radio buttons */
+            margin-left: 10px; /* Add space between the radio button and text */
+        }
+
+        button {
+            display: block; /* Make the button appear on a new line */
+            margin: 20px auto; /* Center-align the button */
+            padding: 10px 20px; /* Add padding for better usability */
+            background-color: #4CAF50; /* Green background color */
+            color: white; /* White text color */
+            font-weight: bold; /* Bold text */
+            border: none; /* Remove borders */
+            border-radius: 5px; /* Round the corners */
+            cursor: pointer; /* Change cursor to pointer on hover */
+        }
+
+        button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Vote for Your Candidate</h1>
+    <form method="POST">
+        {% for candidate, details in candidates.items() %}
+            <input type="radio" id="{{ candidate }}" name="candidate" value="{{ candidate }}" required>
+            <label for="{{ candidate }}">{{ candidate }} (Politician: {{ details['politician'] }})</label><br>
+        {% endfor %}
+        <button type="submit">Vote</button>
+    </form>
+</body>
+</html>
+

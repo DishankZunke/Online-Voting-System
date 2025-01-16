@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Log In</title>
+    <style>
+        body {
+            background-image: url('/static/voteing%20project.jpg');/* Set the background image */
+            background-size: cover; /* Ensure the image covers the whole page */
+            background-repeat: no-repeat; /* Prevent tiling */
+            background-attachment: fixed; /* Keep the background fixed during scrolling */
+            font-family: Arial, sans-serif; /* Set a clean font */
+            color: white; /* Set text color to white */
+            text-align: center; /* Center-align text and content */
+        }
+
+        h1 {
+            margin-top: 50px; /* Add some space at the top */
+        }
+
+        form {
+            display: inline-block; /* Center the form */
+            background-color: rgba(0, 0, 0, 0.5); /* Add a translucent background for the form */
+            padding: 20px; /* Add padding inside the form */
+            border-radius: 10px; /* Round the corners of the form */
+            margin-top: 20px; /* Add space above the form */
+        }
+
+        label, input, button {
+            display: block; /* Ensure each element is on a new line */
+            margin: 10px 0; /* Add spacing between elements */
+        }
+
+        input, button {
+            padding: 10px; /* Add padding for better usability */
+            border-radius: 5px; /* Round the corners */
+            border: none; /* Remove default borders */
+        }
+
+        button {
+            background-color: #4CAF50; /* Add a green background color */
+            color: white; /* Set text color to white */
+            cursor: pointer; /* Change cursor to pointer on hover */
+        }
+
+        button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Log In</h1>
+    <form method="POST">
+        <label>User ID:</label>
+        <input type="text" name="user_id" required>
+        <button type="submit">Log In</button>
+    </form>
+</body>
+</html>
